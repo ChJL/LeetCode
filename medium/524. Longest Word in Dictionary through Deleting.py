@@ -24,7 +24,7 @@ Output:
 class Solution:
     def findLongestWord(self, s: str, d: List[str]) -> str:
         # -len(x) 讓長的字放前面, x 照字典序
-        #sortword = sorted(d, key = (lambda x:(-len(x),x)) )
+        # sortword = sorted(d, key = (lambda x:(-len(x),x)) )
         MAX_len = 0
         res =[]
         ans1 = ""
@@ -33,29 +33,22 @@ class Solution:
             #flag = 0
             
             for j in s:
-                #print("j: ",j)
-                #print("i: ",i)
                 if (j == word[i]):
                     i += 1
                 if (i == len(word)):    
                     if( i> MAX_len):
-                        ans1 = word
+                        res.clear()
+                        res.append(word)
                         MAX_len = i
                     elif(i == MAX_len):
-                        if(len(res) == 0):
-                            res.append(word)
-                        elif(len(res[-1]) < i):
-                            res.clear()
-                            res.append(word)
-                        else:
-                            res.append(word)
+                        
+                        res.append(word)
+                        
                     break
                             
-        if (len(res)>0 and len(ans1)>len(res[-1])):
-            return ans1
-        else:
-            res.append(ans1)
+        if (len(res)>0 ):
             ans = sorted(res, key = (lambda x:x))
             return ans[0]
+            
             
         return ""
