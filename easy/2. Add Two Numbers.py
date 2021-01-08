@@ -1,10 +1,12 @@
+# Tag: Recursion
+# iterative method
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-# Tag: Recursion
-# iterative method
+
 
 '''
 You are given two non-empty linked lists representing two non-negative integers. 
