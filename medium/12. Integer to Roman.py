@@ -47,3 +47,24 @@ class Solution:
             level *= 10
         
         return ans
+
+'''
+
+# Huahua Solution
+# https://zxi.mytechroad.com/blog/simulation/leetcode-12-integer-to-roman/
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        roman = [[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],
+                 [100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],
+                 [9,"IX"],[5,"V"],[4,"IV"],[1,"I"]]
+                
+        index = 0
+        ans = ""
+        while num:
+            if num >= roman[index][0]:
+                ans = ans + roman[index][1]
+                num -= roman[index][0]
+            else:
+                index +=1
+        return ans
+'''
